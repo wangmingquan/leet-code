@@ -13,10 +13,10 @@ var NumArray = function(nums) {
  */
 
 NumArray.prototype.sumRange = function(i, j) {
-  let subArr = this.nums.slice(i, j + 1);
   let count = 0;
-  for (let item of subArr) {
-    count += item;
+  while (i <= j) {
+    count += this.nums[i];
+    i++;
   }
   return count;
 };
