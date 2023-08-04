@@ -10,14 +10,18 @@
  * @return {boolean}
  */
 var isUnivalTree = function (root) {
-  let set = new Set();
+  let pre = root.val;
+  let flag = true;
   let dfs = root => {
     if (root) {
-      set.add(root.val);
+      if (root.val !== pre) {
+        flag = false;
+        return;
+      }
       dfs(root.left);
       dfs(root.right);
     }
   };
   dfs(root);
-  return set.size === 1;
+  return flag;
 };
