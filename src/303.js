@@ -7,13 +7,13 @@ var NumArray = function(nums) {
 };
 
 /**
- * @param {number} i
- * @param {number} j
+ * @param {number} left
+ * @param {number} right
  * @return {number}
  */
 
-NumArray.prototype.sumRange = function(i, j) {
-  let count = 0;
+NumArray.prototype.sumRange = function (left, right) {
+  let count = 0, i = left, j = right;
   while (i <= j) {
     count += this.nums[i];
     i++;

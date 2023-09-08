@@ -2,6 +2,10 @@ function TreeNode (val) {
   this.val = val;
   this.left = this.right = null;
 }
+function ListNode(val, next) {
+  this.val = (val === undefined ? 0 : val)
+  this.next = (next === undefined ? null : next)
+}
 
 function arrayToTree (arr) {
   function toNode (item) {
@@ -62,7 +66,25 @@ function treeToArray (root) {
   return [root.val].concat(list); // 换成输出这行代码就能输出二叉树的数组表示形式，与我们前面那个arrayToBinary方法正好相反
 }
 
+function arrayToListNode (arr) {
+  let listNode = null;
+  let pos = null;
+  for (let i = 0, l = arr.length; i < l; i++) {
+    if (listNode === null) {
+      listNode = new ListNode(arr[i]);
+      pos = listNode;
+    } else {
+      pos.next = new ListNode(arr[i]);
+      pos = pos.next;
+    }
+  }
+  return listNode;
+}
+
 module.exports = {
   arrayToTree,
-  treeToArray
+  treeToArray,
+  TreeNode,
+  ListNode,
+  arrayToListNode
 };

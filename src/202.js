@@ -3,18 +3,12 @@
  * @return {boolean}
  */
 var isHappy = function (n) {
-  if (n === 1) {
-    return true;
-  }
+  if (n === 1) return true;
   let newNArr = [];
-  let getNewN = function (n) {
-    let arr = (n + '').split('');
-    let sum = 0;
-    for (let item of arr) {
-      sum += item * item;
-    }
-    return sum;
-  };
+  let getNewN = (n) =>  (n + '')
+    .split('')
+    .map(n => n * n)
+    .reduce((a,b) => a + b);
   let newN = n;
   let flag = true;
   while (flag) {
@@ -34,3 +28,6 @@ var isHappy = function (n) {
     }
   }
 };
+
+
+console.log(isHappy(19));

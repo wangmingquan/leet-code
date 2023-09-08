@@ -3,7 +3,6 @@
  * @return {boolean}
  */
 var detectCapitalUse = function (word) {
-  let flag = true;
   let fisrtCap = false;
   let capLength = 0;
   for (let i = 0, l = word.length; i < l; i++) {

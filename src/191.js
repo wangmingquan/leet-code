@@ -4,7 +4,7 @@
  */
 
 var hammingWeight = function(n) {
-  n = parseInt(n).toString(2);
+  n = n.toString(2);
   let index = 0;
   let count = 0;
   while (index < n.length) {
@@ -17,6 +17,6 @@ var hammingWeight = function(n) {
 };
 
 // test case
-console.log(hammingWeight('00000000000000000000000000001011'));
-console.log(hammingWeight('00000000000000000000000010000000'));
-console.log(hammingWeight('11111111111111111111111111111101'));
+console.log(hammingWeight(0b00000000000000000000000000001011));
+console.log(hammingWeight(0b00000000000000000000000010000000));
+console.log(hammingWeight(0b11111111111111111111111111111101));
