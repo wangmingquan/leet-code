@@ -4,12 +4,13 @@
  * @param {string} S S
  * @return {number} 宝石数量
  */
-var numJewelsInStones = function (J, S) {
+var numJewelsInStones = function (jewels, stones) {
   let count = 0;
-  for (var i = 0, lJ = J.length; i < lJ; i++) {
-    for (var j = 0, lS = S.length; j < lS; j++) {
-      if (J[i] === S[j]) {
+  for (var j = 0, lS = stones.length; j < lS; j++) {
+    for (var i = 0, lJ = jewels.length; i < lJ; i++) {
+      if (jewels[i] === stones[j]) {
         count++;
+        break;
       }
     }
   }

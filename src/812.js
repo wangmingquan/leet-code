@@ -4,7 +4,7 @@
  */
 var largestTriangleArea = function (points) {
   let maxArea = 0;
-  // 计算面试
+  // 计算面积
   let getArea = (x1, y1, x2, y2, x3, y3) => {
     return Math.abs(
       (x1 * y2 + x2 * y3 + x3 * y1 - x1 * y3 - x2 * y1 - x3 * y2) / 2
